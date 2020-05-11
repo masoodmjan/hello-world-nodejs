@@ -15,7 +15,7 @@ spec:
         run: test-node-k8
     spec:
       containers:
-      - image: gcr.io/<google-project-id>/test-node-k8:latest
+      - image: gcr.io/hello-world-nodejs/test-node-k8:latest
         name: test-node-k8
         ports:
         - containerPort: 8080

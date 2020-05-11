@@ -18,4 +18,4 @@ spec:
       - image: gcr.io/hello-world-nodejs/test-node-k8:latest
         name: test-node-k8
         ports:
-        - containerPort: 8080
+        - containerPort: 80

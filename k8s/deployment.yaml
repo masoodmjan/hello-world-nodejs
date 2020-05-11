@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: test-node-k8
+  name: test-node-k8
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      run: test-node-k8
+  template:
+    metadata:
+      labels:
+        run: test-node-k8
+    spec:
+      containers:
+      - image: gcr.io/<google-project-id>/test-node-k8:latest
+        name: test-node-k8
+        ports:
+        - containerPort: 8080

@@ -1,0 +1,20 @@
+steps:
+
+#step 3
+- name: 'gcr.io/cloud-builders/kubectl'
+  args: ['apply', '-f', 'k8s/']
+  env:
+  - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=mazataz-cluster1'
+#step 4
+- name: 'gcr.io/cloud-builders/kubectl'
+  args: [
+   'set', 
+   'image', 
+   'deployment', 
+   'test-node-k8', 
+   'test-node-k8=gcr.io/$PROJECT_ID/test-node-k8:latest'
+  ]
+  env:
+  - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=mazataz-cluster1'

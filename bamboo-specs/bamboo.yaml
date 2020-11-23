@@ -1,0 +1,18 @@
+project:
+  key: PROJECTKEY
+  name: yaml_project
+  plans:
+    - key: PLAN1KEY
+      name: yaml_seed_plan
+      stages:
+        - name: yaml_seed_mystage
+          description: set environment variable
+          manual: false
+          jobs:
+            - key: YMLPLAN
+              name: tests the software
+              tasks:
+                - !script
+                  inlineScript:
+                    interpreter: !scriptInterpreter LEGACY_SH_BAT
+                    scriptBody: echo "Hello World"
